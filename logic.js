@@ -10,7 +10,7 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (WeatherData) {
-
+                $("#weatherSection").empty();
                 //start dumping to html
                 var sectionCard = $("<div>");
                 sectionCard.attr("id", "articleCard");
@@ -18,6 +18,9 @@ $(document).ready(function () {
                 //attach the content the appropiate well
                 $("#articleCard").append("<h3>" + ((WeatherData.list[1].main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + "°F" + " </h3>");
                 $("#articleCard").append("<h3>" + "Overcast" + "</h3>" + "<img src=" + "http://openweathermap.org/img/wn/" + WeatherData.list[2].weather[0]['icon'] + "@2x.png"  + ">");
+                
+                $("#articleCard").append("<h3>" + "Description: " + "</h3>" + "<b>"+ WeatherData.list[2].weather[0]['description']+"</b>");
+
                 $("#articleCard").append("<h3>" + " Humidity: " + WeatherData.list[1].main.humidity + "%" + " </h3>");
                 console.log(WeatherData.list[2].weather[0]['icon'])
                 $("#articleCard").append("<h3>" + WeatherData.city.name + "</h3>");
