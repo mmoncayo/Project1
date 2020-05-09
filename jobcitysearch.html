@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Job and City Search</title>
 
-    <!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -34,7 +31,7 @@
         </div>
         <div class="input-group">
           <label for="City">City</label>
-          <input type="City" name="City" id="City" placeholder="Where" />
+          <input type="City" name="City" id="cityWeather" placeholder="Where" />
         </div>
         <div id="msg"></div>
         <button id="search">Search</button>
@@ -48,7 +45,7 @@
       <div class="col-md-6">
         <div class="card">
           <h3 class="card-header">Jobs</h3>
-          <div class="card-body">
+          <div class="card-body" id="jobCity">
           </div>
         </div>
 
@@ -56,9 +53,12 @@
       <div class="col-md-6">
         <div class="card">
           <h3 class="card-header">City</h3>
-          <div class="card-body">
+          <div class="card-body" id="weatherSection">
         </div>
     </div>
-
+    
+     <!-- Added link to the jQuery Library -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="logic.js"></script>
 </body>
 </html>
