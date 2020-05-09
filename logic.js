@@ -10,16 +10,16 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (WeatherData) {
-                // $("#weatherSection").empty();
 
                 //start dumping to html
                 var sectionCard = $("<div>");
-                sectionCard.addClass("card");
                 sectionCard.attr("id", "articleCard");
-                sectionCard.addClass("border border-secondary");
                 $("#weatherSection").append(sectionCard);
                 //attach the content the appropiate well
-                $("#articleCard").append("<h3>" + ((WeatherData.list[1].main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + " </h3>");
+                $("#articleCard").append("<h3>" + ((WeatherData.list[1].main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + "°F" + " </h3>");
+                $("#articleCard").append("<h3>" + "Overcast" + "</h3>" + "<img src=" + "http://openweathermap.org/img/wn/" + WeatherData.list[2].weather[0]['icon'] + "@2x.png"  + ">");
+                $("#articleCard").append("<h3>" + " Humidity: " + WeatherData.list[1].main.humidity + "%" + " </h3>");
+                console.log(WeatherData.list[2].weather[0]['icon'])
                 $("#articleCard").append("<h3>" + WeatherData.city.name + "</h3>");
                 // how can i add a class to the newly appended <h3>
 
@@ -41,7 +41,7 @@ $(document).ready(function () {
         runQuery(queryURL);
     })
     $("#clear").on("click", function (event) {
-        event.prebentDefault();
+        event.preventDefault();
         $("#citySection").empty();
         $("#weatherSection").empty();
 
