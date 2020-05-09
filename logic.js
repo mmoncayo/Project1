@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    
+
     var authKey = "60491f0ae881db1d21b8fc251fe7e947"
 
     function runQuery(newLink) {
