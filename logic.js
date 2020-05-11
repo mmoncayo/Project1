@@ -16,14 +16,15 @@ $(document).ready(function () {
                 sectionCard.attr("id", "articleCard");
                 $("#weatherSection").append(sectionCard);
                 //attach the content the appropiate well
-                $("#articleCard").append("<h3>" + ((WeatherData.list[1].main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + "°F" + " </h3>");
-                $("#articleCard").append("<h3>" + "Overcast" + "</h3>" + "<img src=" + "http://openweathermap.org/img/wn/" + WeatherData.list[2].weather[0]['icon'] + "@2x.png"  + ">");
+                $("#articleCard").append("<h3>"+"<p><b> Tempurature: </b>" + ((WeatherData.list[1].main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + "°F" + "</p> </h3>");
+               $("#articleCard").append("<h3>" + "<p> <b>But it feels like:</b> " + ((WeatherData.list[1].main.feels_like - 273.15) * 9/5+32).toFixed(2) + "°F" + " </p> </h3>");
+                $("#articleCard").append("<h3>" + "<b>Overcast: </b>" + "</h3>" + "<img src=" + "http://openweathermap.org/img/wn/" + WeatherData.list[0].weather[0]['icon'] + "@2x.png"  + ">");
                 
-                $("#articleCard").append("<h3>" + "Description: " + "</h3>" + "<b>"+ WeatherData.list[2].weather[0]['description']+"</b>");
+                $("#articleCard").append("<h3>" + "<b>Description: </b>" + WeatherData.list[2].weather[0]['description'] + "</h3>");
 
-                $("#articleCard").append("<h3>" + " Humidity: " + WeatherData.list[1].main.humidity + "%" + " </h3>");
+                $("#articleCard").append("<h3>" + "<b> Humidity: </b>" + WeatherData.list[1].main.humidity + "%" + " </h3>");
                 console.log(WeatherData.list[2].weather[0]['icon'])
-                $("#articleCard").append("<h3>" + WeatherData.city.name + "</h3>");
+                $("#articleCard").append("<h3><b>" + WeatherData.city.name + "</b></h3>");
                 // how can i add a class to the newly appended <h3>
 
             });
@@ -47,6 +48,9 @@ $(document).ready(function () {
         event.preventDefault();
         $("#citySection").empty();
         $("#weatherSection").empty();
+       // get to this portion first before anything $("#cityWeather").empty();
+
+
 
 
     })
