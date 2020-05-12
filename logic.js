@@ -17,7 +17,7 @@ $(document).ready(function () {
                 $("#weatherSection").append(sectionCard);
                 //attach the content the appropiate well
                 $("#articleCard").append("<h3>"+"<p><b> Temperature: </b>" + ((WeatherData.list[1].main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + "°F" + "</p> </h3>");
-               $("#articleCard").append("<h3>" + "<p> <b>But it feels like:</b> " + ((WeatherData.list[1].main.feels_like - 273.15) * 9/5+32).toFixed(2) + "°F" + " </p> </h3>");
+               $("#articleCard").append("<h3>" + "<p> <b>But it feels like:</b> " + ((WeatherData.list[1].main.feels_like - 273.15) * 9 / 5 + 32).toFixed(2) + "°F" + " </p> </h3>");
                 $("#articleCard").append("<h3>" + "<b>Overcast: </b>" + "</h3>" + "<img src=" + "http://openweathermap.org/img/wn/" + WeatherData.list[0].weather[0]['icon'] + "@2x.png"  + ">");
                 
                 $("#articleCard").append("<h3>" + "<b>Description: </b>" + WeatherData.list[2].weather[0]['description'] + "</h3>");
