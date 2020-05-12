@@ -1,6 +1,26 @@
 $(document).ready(function () {
 
-    
+    var jobKeyword= $("#keyword").val().trim();
+    var location= $("#cityWeather").val().trim().split(" ").join("+");
+    var jobQuery= "https://jobs.github.com/positions.json?description=" + jobKeyword + "&location=" + location;
+
+    function jobSearch(jobQuery) {
+        console.log("jobQuery: ", jobQuery);
+        $.ajax({
+            url: jobQuery,
+            method: "GET",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        })
+        .then(function (jobData){
+          // confirm if ajax call pulled the right data (i.e., job openings and city location) 
+          console.log(jobData.title);
+          console.log(jobData.location);
+
+        })
+    }
+
 
     var authKey = "60491f0ae881db1d21b8fc251fe7e947"
 
@@ -36,16 +56,18 @@ $(document).ready(function () {
         //     queryTerm = queryTerm.join("+");
         //   };
         console.log(queryTerm);
-
+        var jobTerm= $("#keyword").val();
         //add in the search term
         var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + queryTerm + "&appid=" + authKey;
-
+        var jobQueryURL= "https://jobs.github.com/positions.json?description=" + jobTerm + "&location=" + queryTerm;
         runQuery(queryURL);
+        jobSearch(jobQueryURL);
     })
     $("#clear").on("click", function (event) {
-        event.prebentDefault();
+        event.preventDefault();
         $("#citySection").empty();
         $("#weatherSection").empty();
+        $("#jobCity").empty();
 
 
     })
