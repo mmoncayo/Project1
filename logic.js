@@ -32,6 +32,7 @@ $(document).ready(function () {
                 $("#weatherSection").empty();
                 //start dumping to html
                 var sectionCard = $("<div>");
+
                 // sectionCard.addClass("card");
                 sectionCard.attr("id", "articleCard");
                 // sectionCard.addClass("border border-secondary");
@@ -47,7 +48,6 @@ $(document).ready(function () {
                 //console.log(WeatherData.list[0].weather[0]['icon'])
              
                  $("#articleCard").append("<h3><b>" + WeatherData.city.name + "</b></h3>");
-                // how can i add a class to the newly appended <h3>
 
             });
     }
@@ -71,9 +71,11 @@ $(document).ready(function () {
     $("#clear").on("click", function (event) {
         event.preventDefault();
         $("#citySection").empty();
+
      $("#weatherSection").empty();
         $("#jobCity").empty();
     
+
 
 
     })
