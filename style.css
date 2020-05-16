@@ -6,7 +6,7 @@
 
 body {
   font-size: 16px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Katibeh';
 }
 
 /* h2 {
@@ -22,14 +22,14 @@ p.b {
 
 .header {
   padding: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Katibeh';
   background-color: #2a607c;
   color: #ffffff;
 }
 
 header {
   padding: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Katibeh';
   background-color: #2a607c;
   color: #ffffff;
 }
@@ -38,16 +38,19 @@ header nav {
   padding-top: 15px;
   margin-right: 20px;
   float: right;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Katibeh';
   font-size: 20px;
 }
 
 .main {
   height: 800px;
   width: 50%;
-  margin-bottom: 25px;
-  background-size: cover;
+  margin-bottom: -175px;
   background-position: left;
+}
+
+img {
+  max-width: 1110px;
 }
 
 .header div ul {
@@ -66,6 +69,11 @@ header ul {
 header ul li {
   display: inline-block;
   margin-left: 25px;
+}
+
+.container {
+  font-family: 'Katibeh';
+
 }
 
 a {
@@ -178,4 +186,12 @@ footer {
 
 #msg.error {
   color: #e6252c;
+}
+
+#articleCard {
+  text-align: center;
+}
+
+.page-link {
+  text-align: center;
 }
