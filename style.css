@@ -179,3 +179,11 @@ footer {
 #msg.error {
   color: #e6252c;
 }
+
+#articleCard {
+  text-align: center;
+}
+
+.page-link {
+  text-align: center;
+}
